@@ -18,21 +18,16 @@ public class UserDao {
     private JdbcTemplate jdbcTemplate;
 
     //用户登陆
-    public String selectByUsernameAndPassword(String username, String password){
-        String sql = "select username from users where username=? and password=?";
-        List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql, username, password);
-        for (Map<String, Object> map:maps){
-            for(String u : map.keySet()){
-                return (String) map.get(u);
-            }
-        }
-        return null;
+    public Users selectByUsernameAndPassword(String username, String password){
+        String sql = "select * from users where username=? and password=?";
+        Users u = jdbcTemplate.queryForObject(sql, new UserRowMapper(), username, password);
+        return u;
     }
 
     //查询所有好友信息
     public List<Users> selectAll() {
-        String sql = "select id,username,password,birthday,interest,phonenum,qq,creat_time,update_time from users";
-        List<Users> li = jdbcTemplate.query(sql, new UserRowMapper());
+        String sql = "select * from users where status=? and huishouzhan=?";
+        List<Users> li = jdbcTemplate.query(sql, new UserRowMapper(),0,0);
         return li;
     }
 
@@ -51,8 +46,8 @@ public class UserDao {
 
     //查询回收站好友信息
     public List<Users> selectAllHui() {
-        String sql = "select id,username,password,birthday,interest,phonenum,qq,creat_time,update_time from users where huishouzhan = 1";
-        List<Users> li = jdbcTemplate.query(sql, new UserRowMapper());
+        String sql = "select * from users where huishouzhan = ?";
+        List<Users> li = jdbcTemplate.query(sql, new UserRowMapper(),1);
         return li;
     }
 

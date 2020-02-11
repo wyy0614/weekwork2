@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 public interface UserService {
-    String selectByUsernameAndPassword(String username, String password);
+
     List<Users> getAll();
 
     int addOne(String username, Date birthday);
@@ -16,4 +16,8 @@ public interface UserService {
     List<Users> selectAllHui();
 
     int deleteFriend();
+
+    Users login(String username, String password);
+
+    List<Users> cc();
 }

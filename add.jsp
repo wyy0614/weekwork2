@@ -12,8 +12,11 @@
     <title>Title</title>
 </head>
 <body>
-    <input type="text" placeholder="好友名称" name="username">
-    <input type="date" placeholder="好友生日" name="birthday">
-    <input type="submit" value="新增">
+    <form action="/user/add.do">
+        <input type="text" placeholder="好友名称" name="username">
+        <input type="date" placeholder="好友生日" name="birthday">
+        <input type="submit" value="新增">
+    </form>
+
 </body>
 </html>

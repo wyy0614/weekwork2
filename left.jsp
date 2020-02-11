@@ -33,13 +33,13 @@
 <div id="lb">
     <ul>
         <li>
+            <a href="/user/login.do">返回首页</a>
+        </li>
+        <li>
             <a href="/user/getall.do">查询好友信息</a>
         </li>
         <li>
-            <a href="/user/add.do">添加好友信息</a>
-        </li>
-        <li>
-            <a href="/user/huishou.do">删除好友信息</a>
+            <a href="/index/deleteview.do">删除好友信息</a>
         </li>
         <li>
             <a href="/user/getallhui.do">好友回收站</a>

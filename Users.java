@@ -6,13 +6,22 @@ public class Users {
     private Integer id;
     private String userName;
     private String passWord;
+//    private String images;
     private Date birthDay;
     private String interest;
     private Integer phoneNum;
     private Integer qq;
     private Date creatTime;
     private Date updateTime;
+    private Integer status;
 
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     public Integer getId() {
         return id;
@@ -37,6 +46,13 @@ public class Users {
     public void setPassWord(String passWord) {
         this.passWord = passWord;
     }
+//    public String getIamges() {
+//        return images;
+//    }
+//
+//    public void setIamges(String images) {
+//        this.images = images;
+//    }
 
     public Date getBirthDay() {
         return birthDay;
